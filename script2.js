@@ -28,6 +28,7 @@ document.querySelector('.check').addEventListener('click', checkGuess);
 
 
 
+
 /*
 while (score > 0) {
     if (theGuess > theNumber) {
