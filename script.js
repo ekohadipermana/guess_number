@@ -5,3 +5,7 @@ document.querySelector('.message').textContent = 'Correct Number';
 document.querySelector('.guess').value = 20;
 console.log(document.querySelector('.guess').value);
 */
+
+document.querySelector('.check').addEventListener('click', function () {
+    console.log(document.querySelector('.guess').value);
+});
