@@ -7,7 +7,7 @@ console.log(document.querySelector('.guess').value);
 */
 // creating a random number between 1 and 20
 let theNumber = Math.floor(Math.random() * 20 + 1);
-document.querySelector('.number').textContent = randomNumber;
+document.querySelector('.number').textContent = theNumber;
 let score = 20;
 
 console.log(document.querySelector('.number').textContent);
@@ -21,7 +21,7 @@ console.log(document.querySelector('.score').textContent)
 // let theNumber = 10;
 // let score = 5;
 let checkGuess = function() {
-    theGuess = Number(document.querySelector('.guess').value);
+    let theGuess = Number(document.querySelector('.guess').value);
     if (score > 1) {
         if (theGuess > theNumber) {
             document.querySelector('.message').textContent = 'Too high';
