@@ -6,120 +6,43 @@ document.querySelector('.guess').value = 20;
 console.log(document.querySelector('.guess').value);
 */
 // creating a random number between 1 and 20
-let randomNumber = Math.floor(Math.random() * 20 + 1);
+let theNumber = Math.floor(Math.random() * 20 + 1);
 document.querySelector('.number').textContent = randomNumber;
 let score = 20;
 
-// first alternative
-let checkGuess = function () {
-    // console.log(document.querySelector('.guess').value);
-    let guess = Number(document.querySelector('.guess').value);
-    // document.querySelector('.score').textContent = score;
-    if (score < 1) {
-        document.querySelector('.message').textContent = '⛔You lose';
-    }
-    else {
-        if (!guess) {
-            document.querySelector('.message').textContent = '⚠ No Number ⚠';
-        }
-        else if (guess > randomNumber) {
-            document.querySelector('.message').textContent = 'Too high';
-            score -= 1;
-            document.querySelector('.score').textContent = score;    
-        }
-        else if (guess < randomNumber) {
-            document.querySelector('.message').textContent = 'Too low';
-            score -= 1;
-            document.querySelector('.score').textContent = score; 
-        }
-        else if (guess === randomNumber) {
-            document.querySelector('.message').textContent = 'Bingo!';
-        }
-    }
+console.log(document.querySelector('.number').textContent);
+console.log(document.querySelector('.guess').value);
+let clicked = function() {
+    console.log(document.querySelector('.message').textContent = 'clicked');
 }
+// document.querySelector('.check').addEventListener('click', clicked);
+console.log(document.querySelector('.score').textContent)
 
-// Second Alternative
-let checkGuess2 = function () {
-    // console.log(document.querySelector('.guess').value);
-    let guess = Number(document.querySelector('.guess').value);
-    // document.querySelector('.score').textContent = score;
+// let theNumber = 10;
+// let score = 5;
+let checkGuess = function() {
+    theGuess = Number(document.querySelector('.guess').value);
     if (score > 1) {
-        if (!guess) {
-            document.querySelector('.message').textContent = '⚠ No Number ⚠';
-        }
-        else if (guess > randomNumber) {
+        if (theGuess > theNumber) {
             document.querySelector('.message').textContent = 'Too high';
-            score -= 1;
-            document.querySelector('.score').textContent = score;    
+            score--;
+            document.querySelector('.score').textContent = score;
         }
-        else if (guess < randomNumber) {
-            document.querySelector('.message').textContent = 'Too low';
-            score -= 1;
-            document.querySelector('.score').textContent = score; 
+        else if (theGuess < theNumber) {
+            document.querySelector('.message').textContent = 'Too Low';
+            score--;
+            document.querySelector('.score').textContent = score;
         }
-        else if (guess === randomNumber) {
-            document.querySelector('.message').textContent = 'Bingo!';
+        else if (theGuess === theNumber) {
+            document.querySelector('.message').textContent = 'Correct!';
         }
     }
     else {
-        document.querySelector('.message').textContent = '⛔You lose';
-        document.querySelector('.score').textContent = score;
+        document.querySelector('.message').textContent = 'Lose!';
     }
+  
+
 }
-
-// Third alternative
-let checkGuess3 = function () {
-    let guess = Number(document.querySelector('.guess').value);
-    while (score > 0) {
-        if (!guess) {
-            document.querySelector('.message').textContent = '⚠ No Number ⚠';
-        }
-        else if (guess > randomNumber) {
-            document.querySelector('.message').textContent = 'Too high';
-            score -= 1;
-            document.querySelector('.score').textContent = score;    
-        }
-        else if (guess < randomNumber) {
-            document.querySelector('.message').textContent = 'Too low';
-            score -= 1;
-            document.querySelector('.score').textContent = score; 
-        }
-        else if (guess === randomNumber) {
-            document.querySelector('.message').textContent = 'Bingo!';
-        }
-    }
-    document.querySelector('.message').textContent = '⛔You lose';
-}
-
-document.querySelector('.check').addEventListener('click', checkGuess3);
-
-/*
-document.querySelector('.check').addEventListener('click', function () {
-    // console.log(document.querySelector('.guess').value);
-    let guess = Number(document.querySelector('.guess').value);
-    // document.querySelector('.score').textContent = score;
-    if (score < 1) {
-        document.querySelector('.message').textContent = '⛔You lose';
-    }
-    else {
-        if (!guess) {
-            document.querySelector('.message').textContent = '⚠ No Number ⚠';
-        }
-        else if (guess > randomNumber) {
-            document.querySelector('.message').textContent = 'Too high';
-            score -= 1;
-            document.querySelector('.score').textContent = score;    
-        }
-        else if (guess < randomNumber) {
-            document.querySelector('.message').textContent = 'Too low';
-            score -= 1;
-            document.querySelector('.score').textContent = score; 
-        }
-        else if (guess === randomNumber) {
-            document.querySelector('.message').textContent = 'Bingo!';
-        }
-    }    
-});
-*/
+document.querySelector('.check').addEventListener('click', checkGuess);
 
 
